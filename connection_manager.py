@@ -15,7 +15,7 @@ class ConnectionManager:
     async def send_message(self, message: str):
         for connection in self.active_connections:
             try:
-                connection.send_text(message)
+                await connection.send_text(message)
             except Exception as e:
                 print(f"Error sending message: {e}")
                 self.disconnect(connection)
