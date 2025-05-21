@@ -17,10 +17,6 @@ async def send_test_notification():
         await asyncio.sleep(10)
         await manager.send_message(message)
 
-@app.post("/notification")
-async def manual_notification():
-        await manager.send_message(message)
-        return JSONResponse(content={"message": "Notification sent"})
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
