@@ -24,7 +24,7 @@ This implementation is intended for use as a test assignment for a Junior Python
 2. Install dependencies using pip:
 
 ```bash
-pip install fastapi uvicorn
+pip install -r requirements.txt
 ```
 
 ## Running the Server
