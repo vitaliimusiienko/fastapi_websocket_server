@@ -1,14 +1,13 @@
 import asyncio
 import time
 import logging
-import signal
 
 logger = logging.getLogger(__name__)
 
 class ShutdownHandler:
     def __init__(self, manager, timeout_minutes: int):
         self.manager = manager
-        self.shutdown_timeout = timeout_minutes * 60
+        self.shutdown_timeout = timeout_minutes * 60 # Convert seconds to minutes
         self.shutdown_event = asyncio.Event()
         self.loop = asyncio.get_event_loop()
 
@@ -44,3 +43,4 @@ class ShutdownHandler:
 
         if on_shutdown:
             await on_shutdown()
+            # Perform any additional cleanup or shutdown tasks here

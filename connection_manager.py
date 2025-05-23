@@ -2,7 +2,6 @@ import logging
 from fastapi import WebSocket
 from typing import List
 from shutdown_handler import ShutdownHandler
-import signal
 
 logger = logging.getLogger(__name__)
 shutdown_handler = ShutdownHandler(manager=None, timeout_minutes=1)
